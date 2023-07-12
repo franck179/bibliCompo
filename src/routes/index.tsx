@@ -3,6 +3,7 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 import LinkBtn from "~/components/buttons/linkBtn";
 import _default from "vite-tsconfig-paths";
 import ElvEtabHead from "~/components/en-tetes/elvEtabHead";
+import LogoSmall from "~/components/en-tetes/logoSmall";
 
 console.log("test");
 
@@ -53,8 +54,10 @@ export default component$(() => {
                     </div>
                 </div>
           <h1 class={"text-2xl"}>En-tête vue élève établissement scolaire</h1>
-          <h2 class={"text-xl"}>Avec le nom d'une classe</h2>
-            <ElvEtabHead nomEtab={nomEtab} nomElv={nomCompletElv} nomClasse={nomClasse}/>
+            <h2 class={"text-xl"}>Lelogo</h2>
+                <LogoSmall />
+            <h2 class={"text-xl"}>Avec le nom d'une classe</h2>
+                <ElvEtabHead nomEtab={nomEtab} nomElv={nomCompletElv} nomClasse={nomClasse}/>
             <h2 class={"text-xl"}>Sans le nom d'une classe</h2>
                 <ElvEtabHead nomEtab={nomEtab} nomElv={nomCompletElv} />
 
