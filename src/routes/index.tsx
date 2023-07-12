@@ -4,6 +4,8 @@ import LinkBtn from "~/components/buttons/linkBtn";
 import _default from "vite-tsconfig-paths";
 import ElvEtabHead from "~/components/en-tetes/elvEtabHead";
 import LogoSmall from "~/components/en-tetes/logoSmall";
+import ActionButton from "~/components/buttons/actionButton";
+import ItemVueElv from "~/components/tests/itemVueElv";
 
 console.log("test");
 
@@ -60,7 +62,15 @@ export default component$(() => {
                 <ElvEtabHead nomEtab={nomEtab} nomElv={nomCompletElv} nomClasse={nomClasse}/>
             <h2 class={"text-xl"}>Sans le nom d'une classe</h2>
                 <ElvEtabHead nomEtab={nomEtab} nomElv={nomCompletElv} />
-
+          <h1 class={"text-2xl"} >Affichage test</h1>
+            <h2 class={"text-xl"}>L'ActionButton</h2>
+                <ActionButton action={"commencer"} />
+                <ActionButton action={"continuer"} />
+                <ActionButton action={"voir"} />
+            <h2 class={"text-xl"}>L'itemVueElv pour les tests</h2>
+                <ItemVueElv nomTest={"Test 1"} status={"nouveau"} />
+                <ItemVueElv nomTest={"Test 2"} status={"enCours"} />
+                <ItemVueElv nomTest={"Test 3"} status={"termine"} />
         </div>
 
     </>
