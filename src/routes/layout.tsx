@@ -1,5 +1,16 @@
-import { component$, Slot } from "@builder.io/qwik";
+import {
+    component$,
+    ContextId,
+    createContextId, Signal,
+    Slot,
+    useContext,
+    useContextProvider,
+    useSignal,
+    useTask$
+} from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
+import ElvEtabHead from "~/components/en-tetes/elvEtabHead";
+import {classeContextId, elvContextId, etabContextId} from "~/root";
 
 export const onGet: RequestHandler = async ({ cacheControl }) => {
   // Control caching for this request for best performance and to reduce hosting costs:
@@ -12,12 +23,28 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
   });
 };
 
+
+
+
 export default component$(() => {
-  return (
-      <div class={"flex flex-col w-full justify-center"}>
-        <div class={"flex flex-col w-full  max-w-7xl border-2 border-blue-500 self-center px-10 "}>
-          <Slot />;
+
+
+    const etabId = useContext(etabContextId);
+    const elvId = useContext(elvContextId);
+    const classeId = useContext(classeContextId);
+
+    useTask$(async ({track}) => {
+        track(() => etabId.value);
+        console.log("In routes layout, etabId.value = ", etabId.value);
+    });
+
+
+    return (
+        <div class={"flex flex-col w-full justify-center"}>
+            <div class={"flex flex-col w-full  max-w-7xl border-2 border-blue-500 self-center px-10 "}>
+                <ElvEtabHead nomEtab={etabId.value} nomElv={elvId.value} nomClasse={classeId.value} />
+                <Slot />
+            </div>
         </div>
-      </div>
-);
+    );
 });

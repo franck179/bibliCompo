@@ -1,13 +1,13 @@
-import { component$ } from "@builder.io/qwik";
+import {component$, useContext, useTask$} from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import LinkBtn from "~/components/buttons/linkBtn";
-import _default from "vite-tsconfig-paths";
 import ElvEtabHead from "~/components/en-tetes/elvEtabHead";
 import LogoSmall from "~/components/en-tetes/logoSmall";
 import ActionButton from "~/components/buttons/actionButton";
 import ItemVueElv from "~/components/tests/itemVueElv";
+import {classeContextId, elvContextId, etabContextId} from "~/root";
 
-console.log("test");
+
 
 export default component$(() => {
   // Dans flex uniquement :
@@ -18,6 +18,15 @@ export default component$(() => {
    const nomEtab = "Lycée A. Malraux";
    const nomCompletElv = "Jean Dupont";
    const nomClasse = "1ère A";
+   const etabId = useContext(etabContextId);
+   const elvId = useContext(elvContextId);
+    const classeId = useContext(classeContextId);
+
+    useTask$(async ({track}) => {
+        track(() => etabId.value);
+        console.log("In accueil index, etabId.value = ", etabId.value);
+    });
+
 
   return (
     /* Grace au layout.tsx tout ça est englobé dans une page de max 1280px de large et centré
@@ -27,6 +36,31 @@ export default component$(() => {
       <div class="flex justify-center items-center ">
         <h1 class={"text-2xl"}>Tests tailwind basics</h1>
       </div>
+        <button
+            class={"bg-blue-500 hover:bg-blue-700 text-white font-bold my-1 py-2 px-4 rounded"}
+            onClick$={() => {
+                etabId.value = nomEtab;
+            }}
+        >
+            Set etabId to "{nomEtab}"
+        </button>
+        <button
+            class={"bg-blue-500 hover:bg-blue-700 text-white font-bold my-1 py-2 px-4 rounded"}
+            onClick$={() => {
+                elvId.value = nomCompletElv;
+            }}
+        >
+            Set elvId to "{nomCompletElv}"
+        </button>
+        <button
+            class={"bg-blue-500 hover:bg-blue-700 text-white font-bold my-1 py-2 px-4 rounded"}
+            onClick$={() => {
+                classeId.value = nomClasse;
+            }}
+        >
+            Set classeId to "{nomClasse}
+        </button>
+
       <div class={"flex  flex-col space-y-3 border-4 border-fuchsia-800 " }>
           texte sans classe ni div DANS le border fushia
         <div class=" border-4 w-fit p-3 ">div en w-fit p-3 </div>
@@ -42,7 +76,7 @@ export default component$(() => {
                       <LinkBtn  href="/page2" >LinkBtn 1</LinkBtn>
                       </div>
                       <div class={"border-2 border-fuchsia-800"}>
-                      <LinkBtn  href="/page2">LinkBtn 2</LinkBtn>
+                      <LinkBtn  href="/eleve/accueil">Accueil élève</LinkBtn>
                       </div>
                   </div>
             <h2 class={"text-xl"}>Essai positionnement mockup</h2>

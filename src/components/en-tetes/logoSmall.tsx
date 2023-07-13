@@ -5,7 +5,7 @@ export default component$(() => {
         <>
             <div class="flex bg-transparent items-center">
                 <div class="shrink-0">
-                    <img class="h-10 w-14" src="../../public/etco-logo-small-transparent.png"
+                    <img class="h-10 w-14" src="/etco-logo-small-transparent.png"
                          alt="ETCO Libres d'apprendre"/>
                 </div>
                 <div class="ml-4">

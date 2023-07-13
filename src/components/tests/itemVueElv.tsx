@@ -1,5 +1,5 @@
 import type { Signal} from "@builder.io/qwik";
-import {component$, useSignal} from "@builder.io/qwik";
+import {component$, useSignal, useTask$} from "@builder.io/qwik";
 import ActionButton from "~/components/buttons/actionButton";
 
 interface ItemVueElvProps {
@@ -10,19 +10,21 @@ interface ItemVueElvProps {
 export default component$<ItemVueElvProps>((props) => {
    const action : Signal<"voir"|"continuer"|"commencer"> = useSignal("commencer");
    const message = useSignal("");
+    useTask$(async () => {
+        if (props.status === "enCours") {
+            action.value = "continuer";
+            message.value = "Commencé";
+        }
+        else if (props.status === "termine") {
+            action.value = "voir";
+            message.value = "Terminé";
+        }
+        else {
+            action.value = "commencer";
+            message.value = "Nouveau";
+        }
+    });
 
-   if (props.status === "enCours") {
-         action.value = "continuer";
-         message.value = "Commencé";
-   }
-   else if (props.status === "termine") {
-         action.value = "voir";
-         message.value = "Terminé";
-   }
-    else if (props.status === "nouveau") {
-         action.value = "commencer";
-         message.value = "Nouveau";
-    }
     return (
         <div class={"grid grid-cols-3 justify-center  items-center sm:text- md:text-md  lg:text-lg xl:text-xl my-1 bg-amber-200 rounded-lg px-3 py-1"}>
             <div class={"justify-self-start"}>{props.nomTest}</div>
