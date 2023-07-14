@@ -1,11 +1,12 @@
 import {component$, useContext, useTask$} from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import LinkBtn from "~/components/buttons/linkBtn";
+import LinkBtn from "~/components/buttons/standaloneLinkBtn";
 import ElvEtabHead from "~/components/en-tetes/elvEtabHead";
 import LogoSmall from "~/components/en-tetes/logoSmall";
 import ActionButton from "~/components/buttons/actionButton";
 import ItemVueElv from "~/components/tests/itemVueElv";
 import {classeContextId, elvContextId, etabContextId} from "~/root";
+import IntroTests from "~/components/tests/introTests";
 
 
 
@@ -105,6 +106,12 @@ export default component$(() => {
                 <ItemVueElv nomTest={"Test 1"} status={"nouveau"} />
                 <ItemVueElv nomTest={"Test 2"} status={"enCours"} />
                 <ItemVueElv nomTest={"Test 3"} status={"termine"} />
+          <h1 class={"text-2xl"}>Composant introTest </h1>
+          <IntroTests annee={2023}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et nisl a sapien malesuada pretium. Vivamus
+              vestibulum risus non mi pulvinar, in consectetur nisl pellentesque. Donec luctus urna id libero consequat,
+              id ultrices risus viverra.
+          </IntroTests>
         </div>
 
     </>

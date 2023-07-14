@@ -1,4 +1,5 @@
-import {component$, ContextId, createContextId, Signal, useContextProvider, useSignal} from "@builder.io/qwik";
+import type { ContextId, Signal} from "@builder.io/qwik";
+import {component$, createContextId, useContextProvider, useSignal} from "@builder.io/qwik";
 import {
   QwikCityProvider,
   RouterOutlet,
@@ -32,7 +33,7 @@ export default component$(() => {
         <link rel="manifest" href="/manifest.json" />
         <RouterHead />
       </head>
-      <body lang="en">
+      <body lang="fr" class={"bg-gray-100"}>
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>

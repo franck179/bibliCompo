@@ -26,7 +26,7 @@ export default component$<ActionButtonProps>((props) => {
             console.log("commencer");
     }
     })
-    const classe = "flex justify-center items-center bg-amber-200 rounded-lg hover:shadow-lg p-2 max-w-lg max-h-lg ";
+    const classe = "flex justify-center items-center bg-gray-700 rounded-lg hover:shadow-lg hover:bg-gray-600 text-white p-2 max-w-lg max-h-lg ";
     return (
             <button class={classe} onClick$={() =>onClick()} >{texte.value}</button>
     );

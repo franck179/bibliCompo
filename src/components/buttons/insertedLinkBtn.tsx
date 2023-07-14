@@ -1,0 +1,29 @@
+import {component$, Slot} from "@builder.io/qwik";
+import {Link} from "@builder.io/qwik-city";
+
+interface InsertedLinkBtnProps {
+    href?: string;
+}
+
+/**
+ * La hauteur du bouton va dépendre de la div parente dans laquelle il se trouve dans certaines limites :
+ *
+ * max-w-lg	max-width: 32rem; - 512px
+ * maw-h-96 max-height: 24rem; - 384px
+ *
+ * **/
+
+export default component$<InsertedLinkBtnProps>(
+    (props) =>
+    {
+    const classe = "flex justify-center items-center bg-gray-700 rounded-lg hover:shadow-lg hover:bg-gray-600 text-white p-2 max-w-lg max-h-lg"
+    return (
+
+            <Link href={props.href} class={classe}>
+                <Slot />
+            </Link>
+
+            );
+    }
+);
+

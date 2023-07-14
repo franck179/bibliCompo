@@ -1,5 +1,5 @@
 import {component$} from "@builder.io/qwik";
-import LinkBtn from "~/components/buttons/linkBtn";
+import LinkBtn from "~/components/buttons/standaloneLinkBtn";
 
 
 export default component$(() => {
