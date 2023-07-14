@@ -16,7 +16,7 @@ interface InsertedLinkBtnProps {
 export default component$<InsertedLinkBtnProps>(
     (props) =>
     {
-    const classe = "flex justify-center items-center bg-gray-700 rounded-lg hover:shadow-lg hover:bg-gray-600 text-white p-2 max-w-lg max-h-lg"
+    const classe = "flex justify-center items-center bg-transparent rounded-lg hover:shadow-lg hover:bg-gray-600 text-white p-2 max-w-lg max-h-lg"
     return (
 
             <Link href={props.href} class={classe}>

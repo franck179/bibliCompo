@@ -7,6 +7,7 @@ import ActionButton from "~/components/buttons/actionButton";
 import ItemVueElv from "~/components/tests/itemVueElv";
 import {classeContextId, elvContextId, etabContextId} from "~/root";
 import IntroTests from "~/components/tests/introTests";
+import ArchivesMenu from "~/components/archivesMenu";
 
 
 
@@ -112,6 +113,8 @@ export default component$(() => {
               vestibulum risus non mi pulvinar, in consectetur nisl pellentesque. Donec luctus urna id libero consequat,
               id ultrices risus viverra.
           </IntroTests>
+          <h1 class={"text-2xl"}>Menu archives </h1>
+          <ArchivesMenu annees={[2020,2021,2022]} />
         </div>
 
     </>
