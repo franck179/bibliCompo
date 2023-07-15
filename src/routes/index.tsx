@@ -1,4 +1,5 @@
-import {component$, useContext, useTask$} from "@builder.io/qwik";
+
+import ImgImageCard from '~/media/image-card.jpg?jsx';import {component$, useContext, useTask$} from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import LinkBtn from "~/components/buttons/standaloneLinkBtn";
 import ElvEtabHead from "~/components/en-tetes/elvEtabHead";
@@ -8,6 +9,12 @@ import ItemVueElv from "~/components/tests/itemVueElv";
 import {classeContextId, elvContextId, etabContextId} from "~/root";
 import IntroTests from "~/components/tests/introTests";
 import ArchivesMenu from "~/components/archivesMenu";
+import Card from "~/components/cards/card";
+import CardTitle from "~/components/cards/card-title";
+import Accueil from "~/routes/eleve/accueil";
+import CardContent from "~/components/cards/card-content";
+import CardActions from "~/components/cards/card-actions";
+import CardImage from "~/components/cards/card-image";
 
 
 
@@ -113,8 +120,85 @@ export default component$(() => {
               vestibulum risus non mi pulvinar, in consectetur nisl pellentesque. Donec luctus urna id libero consequat,
               id ultrices risus viverra.
           </IntroTests>
-          <h1 class={"text-2xl"}>Menu archives </h1>
+          <h1 class={"text-2xl py-2"}>Menu archives </h1>
           <ArchivesMenu annees={[2020,2021,2022]} />
+          <h1 class={"text-2xl py-2"}>Essais cards </h1>
+          <h2 class={"text-xl py-2"}>Card seule</h2>
+          <div class={"py-2"}>
+              <Card borderColor={"red-200"} bgColor={"gray-700"} textColor={"purple-500"} style={"rounded"}>
+                  Text dans le Slot
+              </Card>
+          </div>
+          <h2 class={"text-xl py-2"}>Card avec title</h2>
+          <div class={"py-2"}>
+              <Card borderColor={"red-200"} bgColor={"gray-700"} textColor={"purple-500"} style={"rounded"}>
+                  <CardTitle>Titre de la carte</CardTitle>
+                    Texte hors du titre
+              </Card>
+          </div>
+          <h2 class={"text-xl py-2"}>Card avec title et content</h2>
+          <div class={"py-2"}>
+              <Card>
+                  <CardTitle>Titre de la carte</CardTitle>
+                  <CardContent>
+                      Texte dans le content
+                  </CardContent>
+              </Card>
+          </div>
+          <h2 class={"text-xl py-2"}>Card avec title, content et action</h2>
+          <div class={"py-2"}>
+              <Card>
+                  <CardTitle>Titre de la carte</CardTitle>
+                  <CardContent>
+                      Texte dans le content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et nisl a
+                      sapien malesuada pretium. Vivamus vestibulum risus non mi pulvinar, in consectetur nisl pellentesque.
+                      Donec luctus urna id libero consequat, id ultrices risus viverra.
+                  </CardContent>
+                  <CardActions mainBtnText={"Démarrer le test"} />
+              </Card>
+          </div>
+          <h2 class={"text-xl py-2"}>Card avec title, image dans le content et action</h2>
+          <div class={"py-2"}>
+              <Card>
+                  <CardTitle>Titre de la carte</CardTitle>
+                  <CardContent>
+                      <div class="flex flex-col items-center bg-white rounded-lg md:flex-row md:max-w-xl   dark:bg-gray-800 ">
+                          <ImgImageCard class=" w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" alt="" />
+                              <div class="flex flex-col justify-between p-4 leading-normal">
+                                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Texte dans le content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et nisl a
+                                      sapien malesuada pretium. Vivamus vestibulum risus non mi pulvinar, in consectetur nisl pellentesque.
+                                      Donec luctus urna id libero consequat, id ultrices risus viverra.
+                                  </p>
+                              </div>
+                      </div>
+                  </CardContent>
+                  <CardActions mainBtnText={"Démarrer le test"} />
+              </Card>
+          </div>
+          <h2 class={"text-xl py-2"}>Image Card top avec title, content et action</h2>
+          <div class={"py-2"}>
+              <CardImage place={"top"} src={"/image-card-top.jpg"}>
+                  <CardTitle>Titre de la carte</CardTitle>
+                  <CardContent>
+                      Texte dans le content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et nisl a
+                      sapien malesuada pretium. Vivamus vestibulum risus non mi pulvinar, in consectetur nisl pellentesque.
+                      Donec luctus urna id libero consequat, id ultrices risus viverra.
+                  </CardContent>
+                  <CardActions mainBtnText={"Démarrer le test"} />
+              </CardImage>
+          </div>
+          <h2 class={"text-xl py-2"}>Image Card top avec title, content et action</h2>
+          <div class={"py-2"}>
+              <CardImage place={"bottom"} src={"/image-card-left.jpg"}>
+                  <CardTitle>Titre de la carte</CardTitle>
+                  <CardContent>
+                      Texte dans le content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et nisl a
+                      sapien malesuada pretium. Vivamus vestibulum risus non mi pulvinar, in consectetur nisl pellentesque.
+                      Donec luctus urna id libero consequat, id ultrices risus viverra.
+                  </CardContent>
+                  <CardActions mainBtnText={"Démarrer le test"} />
+              </CardImage>
+          </div>
         </div>
 
     </>
