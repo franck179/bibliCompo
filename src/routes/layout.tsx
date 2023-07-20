@@ -41,9 +41,12 @@ export default component$(() => {
 
     return (
         <div class={"flex flex-col w-full justify-center"}>
-            <div class={"flex flex-col w-full  max-w-7xl border-2 border-blue-500 self-center px-10 "}>
+            <div class={"flex flex-col w-full  max-w-7xl border-2 border-blue-500 self-center "}>
                 <ElvEtabHead nomEtab={etabId.value} nomElv={elvId.value} nomClasse={classeId.value} />
-                <Slot />
+                <div class={"px-10"}>
+                    <Slot />
+                </div>
+
             </div>
         </div>
     );

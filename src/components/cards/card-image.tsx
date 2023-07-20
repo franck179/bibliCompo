@@ -1,5 +1,5 @@
 
-import ImgImageCardTop from '~/media/image-card-top.jpg?jsx';
+import ImgImageCardTop from '../../../public/image-card-top.jpg?jsx';
 import {component$, Slot} from "@builder.io/qwik";
 import Card from "~/components/cards/card";
 

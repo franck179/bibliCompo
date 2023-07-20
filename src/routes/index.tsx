@@ -1,5 +1,6 @@
 
-import ImgImageCard from '~/media/image-card.jpg?jsx';import {component$, useContext, useTask$} from "@builder.io/qwik";
+import ImgImageCard from '../../public/image-card-top.jpg?jsx';
+import {component$, useContext, useTask$} from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import LinkBtn from "~/components/buttons/standaloneLinkBtn";
 import ElvEtabHead from "~/components/en-tetes/elvEtabHead";
@@ -15,6 +16,8 @@ import Accueil from "~/routes/eleve/accueil";
 import CardContent from "~/components/cards/card-content";
 import CardActions from "~/components/cards/card-actions";
 import CardImage from "~/components/cards/card-image";
+import SpiderResults from "~/components/spiderResults";
+
 
 
 
@@ -37,6 +40,7 @@ export default component$(() => {
     });
 
 
+
   return (
     /* Grace au layout.tsx tout ça est englobé dans une page de max 1280px de large et centré
     * Les réglages ici se font par rapport à cette largeur
@@ -45,8 +49,9 @@ export default component$(() => {
       <div class="flex justify-center items-center ">
         <h1 class={"text-2xl"}>Tests tailwind basics</h1>
       </div>
+        <div class={"grid grid-cols-1 gap-2"}>
         <button
-            class={"bg-blue-500 hover:bg-blue-700 text-white font-bold my-1 py-2 px-4 rounded"}
+            class={"bg-blue-500 hover:bg-blue-700 text-white  font-bold my-1 py-2 px-4 rounded"}
             onClick$={() => {
                 etabId.value = nomEtab;
             }}
@@ -69,6 +74,7 @@ export default component$(() => {
         >
             Set classeId to "{nomClasse}
         </button>
+        </div>
 
       <div class={"flex  flex-col space-y-3 border-4 border-fuchsia-800 " }>
           texte sans classe ni div DANS le border fushia
@@ -198,6 +204,20 @@ export default component$(() => {
                   </CardContent>
                   <CardActions mainBtnText={"Démarrer le test"} />
               </CardImage>
+          </div>
+          <h1 class="text-2xl py-2">Test svg</h1>
+          <div class={"grid grid-cols-1 gap-2"}>
+              <svg height="250" width={"250"}>
+                  <path d={"M150 0 L75 200 L225 200 Z"} color={"blue"} />
+
+              </svg>
+              <div class={"w-1/3"}>
+                    <SpiderResults R={2.7} I={3} A={2} S={1} E={3.2} C={2.7} />
+              </div>
+              <div>next block</div>
+              <div class={"w-2/3"}>
+                  <SpiderResults R={2.7} I={3} A={2} S={1} E={3.2} C={2.7} />
+              </div>
           </div>
         </div>
 
