@@ -65,6 +65,19 @@ function getC(note: number) : string {
     return `${getCx(note)} ${getCy(note)} `
 }
 
+/*
+* Il y a un parti pris dans la réalisation du svg : celui-ci est défini dans une viewBox de 150x150
+* et on considère qu'il y a une marge de 25 de chaque côté.
+* L'araignée est donc définie par les points suivants dans un carré de 100x100:
+* R : 75 25
+* I : 118.3 50 où 118.3 = 25 + 50 + 10*5*Math.sqrt(3)/2 = 75 + 50*cos(30°)
+* A : 118.3 100 où 118.3 = 25 + 50 + 10*5*Math.sqrt(3)/2 = 75 + 50*cos(30°)
+* S : 75 125
+* E : 31.7 100 où 31.7 = 75 - 50*cos(30°)
+* C : 31.7 50 où 31.7 = 75 - 50*cos(30°)*
+*
+* */
+
 
 export default component$<SpiderResultsProps>((props) => {
 
