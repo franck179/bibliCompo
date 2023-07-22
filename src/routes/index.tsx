@@ -1,5 +1,5 @@
 
-import ImgImageCard from '../../public/image-card-top.jpg?jsx';
+import ImgImageCard from '../assets/images/image-card-top.jpg?jsx';
 import {component$, useContext, useTask$} from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import LinkBtn from "~/components/buttons/standaloneLinkBtn";
@@ -17,6 +17,7 @@ import CardContent from "~/components/cards/card-content";
 import CardActions from "~/components/cards/card-actions";
 import CardImage from "~/components/cards/card-image";
 import SpiderResults from "~/components/spiderResults";
+import InsertedLinkBtn from "~/components/buttons/insertedLinkBtn";
 
 
 
@@ -79,6 +80,9 @@ export default component$(() => {
       <div class={"flex  flex-col space-y-3 border-4 border-fuchsia-800 " }>
           texte sans classe ni div DANS le border fushia
         <div class=" border-4 w-fit p-3 ">div en w-fit p-3 </div>
+          {/*<div class={"bg-gradient-to-r from-green-400 from-100% via-100% via-gray-700 to-gray-700"}>*/}
+          {/*    gradient*/}
+          {/*</div>*/}
       </div>
       <div class={"h-screen"}>
           <h1 class={"text-2xl"}>LinkBtns</h1>
@@ -120,6 +124,7 @@ export default component$(() => {
                 <ItemVueElv nomTest={"Test 1"} status={"nouveau"} />
                 <ItemVueElv nomTest={"Test 2"} status={"enCours"} />
                 <ItemVueElv nomTest={"Test 3"} status={"termine"} />
+                <ItemVueElv nomTest={"Test 4"} status={"enCours"} percent={77} />
           <h1 class={"text-2xl"}>Composant introTest </h1>
           <IntroTests annee={2023}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et nisl a sapien malesuada pretium. Vivamus
@@ -214,10 +219,25 @@ export default component$(() => {
               <div class={"w-1/3"}>
                     <SpiderResults R={2.7} I={3} A={2} S={1} E={3.2} C={2.7} />
               </div>
-              <div>next block</div>
+
               <div class={"w-2/3"}>
                   <SpiderResults R={2.7} I={3} A={2} S={1} E={3.2} C={2.7} />
               </div>
+          </div>
+          <h1 class="text-2xl py-2">Test superposition</h1>
+          <div class={"grid grid-cols-1 gap-4"}>
+              <div class="z-0 relative bg-gray-700 rounded-lg" style={{width:"100%"}}>
+                  <div class={"z-10 bg-green-700 rounded-bl-lg rounded-tl-lg text-transparent h-full absolute top-0 left-0"} style={{width:"35%"}}>c</div>
+                  <div class={" grid grid-cols-3 justify-center  items-center sm:text- md:text-md  lg:text-lg xl:text-xl my-1  text-white  px-3 py-1"}>
+                      <div class={"z-20 justify-self-start"}>Test de superposition</div>
+                      <div class={"z-20 col-start-2 justify-self-center"}>Commencé</div>
+                      <div class={"z-20 col-start-3 justify-self-end"}>
+                          <InsertedLinkBtn href={"/page2/"}>Continuer le test</InsertedLinkBtn>
+                      </div>
+                  </div>
+              </div>
+              <div >next block</div>
+
           </div>
         </div>
 

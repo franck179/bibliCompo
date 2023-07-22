@@ -10,7 +10,7 @@ export default component$<ArchivesMenuProps>((props) => {
     const annees = props.annees;
     const anneesMenu = annees.map((annee) => {
         return (
-            <InsertedLinkBtn href={"/archives/"+annee} >
+            <InsertedLinkBtn key={annee} href={"/archives/"+annee} >
                 {annee}
             </InsertedLinkBtn>
         );

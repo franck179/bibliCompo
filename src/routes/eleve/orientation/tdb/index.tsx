@@ -38,14 +38,14 @@ export default component$(() => {
                 <h1 class={"text-2xl"}>Tests Principaux</h1>
                 {listeTests.map((test) => {
                     if (test.level === 1) {
-                        return <ItemVueElv nomTest={test.nomTest} status={test.status} />
+                        return <ItemVueElv key={test.id} nomTest={test.nomTest} status={test.status} percent={Math.round(Math.random()*100)} />
                     }
                 }
                 )}
                 <h1 class={"text-2xl"}>Tests Secondaires</h1>
                 {listeTests.map((test) => {
                         if (test.level === 2) {
-                            return <ItemVueElv nomTest={test.nomTest} status={test.status} />
+                            return <ItemVueElv key={test.id} nomTest={test.nomTest} status={test.status} percent={Math.round(Math.random()*100)} />
                         }
                     }
                 )}
