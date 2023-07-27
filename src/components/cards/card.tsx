@@ -19,7 +19,11 @@ export default component$<CardProps>(
             // </div>
 
 
-            <div class="max-w-sm lg:max-w-md 2xl:max-w-2xl p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class=" max-w-md lg:max-w-xl xl:max-w-3xl 2xl:max-w-7xl
+             p-6  my-5
+             border-2 border-secondary-300
+             rounded-lg shadow-lg
+             dark:bg-secondary-500 dark:z-10 ">
                 <Slot />
             </div>
 

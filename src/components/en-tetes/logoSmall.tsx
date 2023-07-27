@@ -12,7 +12,7 @@ export default component$(() => {
                     </Link>
                 </div>
                 <div class="ml-4">
-                    <div class="text-xl font-sans text-white">ETCO Libres d'apprendre</div>
+                    <div class="text-xl font-sans text-onPrimary">ETCO Libres d'apprendre</div>
                 </div>
             </div>
         </>

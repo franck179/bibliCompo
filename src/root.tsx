@@ -1,9 +1,9 @@
 import type { ContextId, Signal} from "@builder.io/qwik";
 import {component$, createContextId, useContextProvider, useSignal} from "@builder.io/qwik";
 import {
-  QwikCityProvider,
-  RouterOutlet,
-  ServiceWorkerRegister,
+    QwikCityProvider, routeLoader$,
+    RouterOutlet,
+    ServiceWorkerRegister,
 } from "@builder.io/qwik-city";
 import { RouterHead } from "./components/router-head/router-head";
 
@@ -13,6 +13,11 @@ import "./global.css";
 export const etabContextId : ContextId<Signal<string>> = createContextId("etabId");
 export const elvContextId : ContextId<Signal<string>> = createContextId("elvId");
 export const classeContextId : ContextId<Signal<string>> = createContextId("classeId");
+
+export const themeContextId : ContextId<Signal<string>> = createContextId("themeId");
+export const systemThemeContextId : ContextId<Signal<string>> = createContextId("systemThemeId");
+
+
 
 export default component$(() => {
   /**
@@ -24,6 +29,9 @@ export default component$(() => {
     useContextProvider(etabContextId, useSignal(""));
     useContextProvider(elvContextId, useSignal(""));
     useContextProvider(classeContextId, useSignal(""));
+    useContextProvider(themeContextId, useSignal(""));
+    useContextProvider(systemThemeContextId, useSignal(""));
+
     console.log("dans root")
 
   return (
@@ -32,8 +40,9 @@ export default component$(() => {
         <meta charSet="utf-8" />
         <link rel="manifest" href="/manifest.json" />
         <RouterHead />
+
       </head>
-      <body lang="fr" class={"bg-gray-100"}>
+      <body lang="fr" class={"bg-lbg text-onLBackground dark:bg-dbg dark:text-white/[87]"}>
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>

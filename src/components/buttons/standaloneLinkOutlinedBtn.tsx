@@ -16,7 +16,13 @@ interface LinkBtnProps {
 export default component$<LinkBtnProps>(
     (props) =>
     {
-    const classe = "flex justify-center items-center bg-accent-300 dark:bg-accent-dark dark:text-onAccent/87 text-onAccent text-center rounded-2xl shadow-lg dark:z-10 hover:bg-accent-200  max-w-4xl max-h-96 py-2 h-full"
+    const classe = "flex justify-center items-center" +
+        " bg-transparent text-accent-300 border-2 border-accent-300" +
+        " dark:border-accent-dark dark:text-accent-dark" +
+        " text-accent-300 rounded-2xl shadow-lg " +
+        "hover:text-accent-200 hover:border-accent-200 " +
+        "dark:hover:border-accent-300 dark:hover:text-accent-300" +
+        " max-w-4xl max-h-96 py-2 h-full"
     return (
 
             <Link href={props.href} class={classe}>
