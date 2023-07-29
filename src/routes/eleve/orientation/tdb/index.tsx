@@ -1,6 +1,5 @@
 import {component$} from "@builder.io/qwik";
 import IntroTests from "~/components/tests/introTests";
-import StandaloneLinkBtn from "~/components/buttons/standaloneLinkBtn";
 import ItemVueElv from "~/components/tests/itemVueElv";
 
 export type Test = {
@@ -55,22 +54,24 @@ export default component$(() => {
     return (
 
         <>
-            <div class={"grid grid-cols-1 gap-4 mt-4"}>
-                <div class={"flex flex-col-reverse md:grid md:grid-cols-2 gap-4 mb-6"}>
+            {/*<div class={"grid grid-cols-1 gap-4 mt-4"}>*/}
+                <div class={"flex flex-col-reverse md:grid md:grid-cols-1 gap-4 mb-6 md:col-span-2"}>
                     <IntroTests annee={2023}>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et nisl a sapien malesuada pretium. Vivamus
                         vestibulum risus non mi pulvinar, in consectetur nisl pellentesque. Donec luctus urna id libero consequat,
                         id ultrices risus viverra.
                     </IntroTests>
-                    <StandaloneLinkBtn href={"../results"}>Profile</StandaloneLinkBtn>
                 </div>
-                <h1 class={"text-2xl"}>Tests Principaux</h1>
-                {listeTests.map((test) => {
-                    if (test.level === 1) {
-                        return <ItemVueElv key={test.id} nomTest={test.nomTest} status={test.status} id={test.id} percent={Math.round(Math.random()*100)} />
+                <div class={"md:col-span-2"}>
+                    <h1 class={"text-2xl"}>Tests Principaux</h1>
+                    {listeTests.map((test) => {
+                        if (test.level === 1) {
+                            return <ItemVueElv key={test.id} nomTest={test.nomTest} status={test.status} id={test.id} percent={Math.round(Math.random()*100)} />
+                        }
                     }
-                }
-                )}
+                    )}
+                </div>
+            <div class={"md:col-span-2"}>
                 <h1 class={"text-2xl"}>Tests Secondaires</h1>
                 {listeTests.map((test) => {
                         if (test.level === 2) {
@@ -79,6 +80,7 @@ export default component$(() => {
                     }
                 )}
             </div>
+            {/*</div>*/}
         </>
     )
 });
