@@ -28,10 +28,10 @@ export default component$(() => {
     const score= getScore("riasec", 2);
     return (
         <>
-            <div class={"flex md:col-span-2 justify-center text-3xl"}>Mon Profil R.I.A.S.E.C.</div>
-            <div class={{"flex flex-col justify-start align-middle":true}}>
+            <div class={"flex md:col-span-2 justify-center text-2xl sm:text-3xl"}>Mon Profil R.I.A.S.E.C.</div>
+            <div class={"flex flex-col justify-center align-middle"}>
 
-                <div class={"grid grid-cols-6 flex items-center text-2xl md:text-3xl"}>
+                <div class={"grid grid-cols-6 text-2xl md:text-3xl"}>
                     <div class={"flex flex-col justify-center items-center"}>
                         <div>R</div>
                         <div>{score[0]}</div>
@@ -60,7 +60,7 @@ export default component$(() => {
                 </div>
             </div>
 
-            <div class={"flex justify-center items-center md:row-span-2"}>
+            <div class={"flex justify-center items-center md:h-auto md:row-span-2 "}>
                 <SpiderResults R={score[0]} I={score[1]} A={score[2]} S={score[3]} E={score[4]} C={score[5]} />
             </div>
             <div class={""}>

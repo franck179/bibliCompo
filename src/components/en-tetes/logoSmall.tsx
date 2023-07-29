@@ -11,8 +11,8 @@ export default component$(() => {
                              alt="ETCO Libres d'apprendre"/>
                     </Link>
                 </div>
-                <div class="ml-4">
-                    <div class="text-xl font-sans text-onPrimary">ETCO Libres d'apprendre</div>
+                <div class="sm:ml-4">
+                    <div class="sm:text-xl font-sans text-onPrimary">ETCO Libres d'apprendre</div>
                 </div>
             </div>
         </>

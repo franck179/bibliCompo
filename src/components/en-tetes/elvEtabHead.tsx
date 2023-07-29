@@ -21,10 +21,10 @@ return (
 
     <div class="flex flex-col w-fit">
         <LogoSmall />
-      <div class={"text-end"}>{props.nomEtab}</div>
+      <div class={"text-center sm:text-end"}>{props.nomEtab}</div>
     </div>
 
-    <div class="flex flex-col grow-1 items-center justify-center pr-20">
+    <div class="flex flex-col grow-1 items-center justify-center pr-10 sm:pr-20">
       <div>{props.nomElv}</div>
       <div>{classe}</div>
     </div>
