@@ -25,7 +25,7 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 /*
 TODO:
        - préparer le grid-layout général
-       - faire en sorte que le header reste en haut de la page même quand on scroll
+       - faire en sorte que le elvEtabHead reste en haut de la page même quand on scroll
        - prévoir de la nav dans le header (ou transformer le header en nav bar) avec stack en burger en md
 */
 
@@ -72,7 +72,7 @@ return (
 
                 <div class={"grid grid-cols-1"}>
 
-                        <div class={"flex flex-col w-full  max-w-7xl border-2 border-blue-500 self-center justify-self-center"}>
+                        <div class={"flex flex-col sticky top-0 z-50 w-full  max-w-7xl border-2 border-blue-500 self-center justify-self-center mb-8"}>
                             <ElvEtabHead nomEtab={etabId.value} nomElv={elvId.value} nomClasse={classeId.value} />
                         </div>
 

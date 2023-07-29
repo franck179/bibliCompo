@@ -11,15 +11,34 @@ interface ElvEtabHeadProps {
 
  export default component$<ElvEtabHeadProps>((props) => {
         const classe = props.nomClasse?props.nomClasse:"";
-        return (
-            <div class={"flex justify-between items-center sm:text- md:text-md  lg:text-lg xl:text-xl  bg-primary-300  px-3 py-1 mb-8"}>
-                <LogoSmall />
-                <div class={"text-onPrimary dark:text-onPrimary/[87]"}>{props.nomEtab}</div>
-                <div class={"flex flex-row justify-between gap-6"}>
-                    <div class={"text-onPrimary dark:text-onPrimary/[87]"}>{props.nomElv}</div>
-                   {(classe !== "") && <div class={"text-onPrimary dark:text-onPrimary/[87]"}> {classe} </div>}
-                </div>
-                <ThemeSwitcher />
-            </div>
-        );
+
+
+return (
+
+  <div
+      class="grid h-full sm:text- md:text-md  lg:text-lg xl:text-xl  bg-primary-300  px-3 py-1"
+      style={'grid-template-columns: auto 1fr auto'}>
+
+    <div class="flex flex-col w-fit">
+        <LogoSmall />
+      <div class={"text-end"}>{props.nomEtab}</div>
+    </div>
+
+    <div class="flex flex-col grow-1 items-center justify-center pr-20">
+      <div>{props.nomElv}</div>
+      <div>{classe}</div>
+    </div>
+
+    <div class="flex justify-end items-center">
+      <ThemeSwitcher />
+    </div>
+
+  </div>
+
+);
+
+
+
+
+
     });
