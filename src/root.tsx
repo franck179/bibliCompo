@@ -42,7 +42,7 @@ export default component$(() => {
         <RouterHead />
 
       </head>
-      <body lang="fr" class={"bg-lbg text-onLBackground dark:bg-dbg dark:text-white/[87]"}>
+      <body lang="fr" class={"bg-lm-bg-normal text-lm-textColor dark:bg-dm-bg-normal dark:text-dm-textColor"}>
         <RouterOutlet />
         <ServiceWorkerRegister />
       </body>

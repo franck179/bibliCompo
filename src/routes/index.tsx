@@ -19,9 +19,9 @@ TODO:
 return (
     <>
         <div class={"col-span-2 text-center"}>WILL BE THE HERO PAGE</div>
-        <StandaloneLinkBtn href={"/eleve/accueil/"}>Composant d'accueil</StandaloneLinkBtn>
-        <StandaloneLinkBtn href={"/eleve/orientation/tdb/"}>Composant Tableau de Bord</StandaloneLinkBtn>
-        <StandaloneLinkBtn href={"/eleve/orientation/profil/"}>Composant Profil Elève</StandaloneLinkBtn>
+        <StandaloneLinkBtn href={"/eleve/accueil/"} color={"accent"}>Composant d'accueil - accent</StandaloneLinkBtn>
+        <StandaloneLinkBtn href={"/eleve/orientation/tdb/"} color={"secondary"}>Composant Tableau de Bord - secondary</StandaloneLinkBtn>
+        <StandaloneLinkBtn href={"/eleve/orientation/profil/"}>Composant Profil Elève - default/primary</StandaloneLinkBtn>
     </>
 
      );

@@ -60,7 +60,7 @@ export default component$<ItemVueElvProps>((props) => {
 
     return (
         <>
-            <div class="z-0 relative bg-primary-500 rounded-lg" style={{width:"100%"}}>
+            <div class="z-0 relative bg-lm-primary-normal dark:bg-dm-primary-normal rounded-lg px-4" style={{width:"100%"}}>
                 {/*
                     La class absolute top-0 left-0 positionne la div en question de façon absolue en haut à gauche
                     de sa div relative parente. Elle perd par la même occasion toute existence physique pour le
@@ -73,13 +73,13 @@ export default component$<ItemVueElvProps>((props) => {
                     ${(percent.value === 100) ? 'rounded-r-lg' : '' fonctionne mais
                     w-${percent.value}% ne fonctionne pas
                 */}
-                <div class={`z-10 bg-accent-300 dark:bg-accent-dark rounded-l-lg ${(percent.value === 100) ? 'rounded-r-lg' : ''}  h-full absolute top-0 left-0`}
+                <div class={`z-10 bg-lm-accent dark:bg-dm-accent rounded-l-lg ${(percent.value === 100) ? 'rounded-r-lg' : ''}  h-full absolute top-0 left-0`}
                      style={{width:percent.value+"%"}}></div>
-                <div class={" grid grid-cols-3 justify-center  items-center sm:text- md:text-md  lg:text-lg xl:text-xl my-1  text-onAccent dark:text-onAccent/87"}>
+                <div class={" grid grid-cols-3 justify-center  items-center sm:text- md:text-md  lg:text-lg xl:text-xl my-1  text-lm-textOnAccent dark:text-dm-textColor"}>
                     <div class={"z-20 justify-self-start px-2"}>{props.nomTest}</div>
                     <div class={"z-20 col-start-2 justify-self-center"}>{message.value}</div>
                     <div class={"z-20 col-start-3 justify-self-end"}>
-                        <InsertedLinkBtn href={url.value}>{texte.value}</InsertedLinkBtn>
+                        <InsertedLinkBtn href={url.value} dm_color={"onPrimary"}>{texte.value}</InsertedLinkBtn>
                     </div>
                 </div>
             </div>

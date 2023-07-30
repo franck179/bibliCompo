@@ -17,7 +17,7 @@ export default component$(() => {
 
             <div class={"order-1 h-16 md:h-24 lg:h-40"}> <StandaloneLinkBtn  href="/page2">Score Études</StandaloneLinkBtn> </div>
             <div class={" h-16 md:h-auto md:row-span-2 order-3 md:order-2"}><StandaloneLinkBtn href={"/page2"} >Méthodes de travail </StandaloneLinkBtn></div>
-            <div class={"order-2 h-16 md:order-3 md:h-24 lg:h-40"}> <StandaloneLinkBtn  href="../orientation/tdb/">Orientation</StandaloneLinkBtn></div>
+            <div class={"order-2 h-16 md:order-3 md:h-24 lg:h-40"}> <StandaloneLinkBtn  href="../orientation/tdb/" color={"accent"}>Orientation</StandaloneLinkBtn></div>
         </>
     );
 });

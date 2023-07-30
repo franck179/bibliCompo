@@ -64,7 +64,7 @@ export default component$(() => {
                 <SpiderResults R={score[0]} I={score[1]} A={score[2]} S={score[3]} E={score[4]} C={score[5]} />
             </div>
             <div class={""}>
-                <StandaloneLinkBtn href={"../results"}>Découvrir les métiers correpondants à ce profil</StandaloneLinkBtn>
+                <StandaloneLinkBtn href={"../results"} color={"accent"}>Découvrir les métiers correpondants à ce profil</StandaloneLinkBtn>
             </div>
 
         </>
