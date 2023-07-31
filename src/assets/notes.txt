@@ -1,0 +1,81 @@
+Palette 1 :
+ https://realtimecolors.com/?colors=fbf8fc-1d0e20-cf9fda-16090b-dba8b1
+
+Light :
+'text': 'rgb(29, 14, 32)',
+'background': 'rgb(251, 248, 252)',
+'primary': 'rgb(207, 159, 218)',
+'primaryLighter ,'#F5EBF7',
+'secondary': 'rgb(234, 205, 209)',
+'secondaryLighter':'#F8EFF4',
+'accent': 'rgb(166, 68, 86)',
+
+Dark :
+'text': 'rgb(251, 248, 252)',
+'background': 'rgb(29, 14, 32)',
+'primary': 'rgb(207, 159, 218)',
+'primaryDarker': '#382243',
+'secondary': 'rgb(22, 9, 11)',
+'secondaryDarker': '#1B0D1C',
+'accent': 'rgb(219, 168, 177)',
+
+
+De façon générale :
+En light :
+Il y a :
+
+Primary et un PrimaryLighter
+
+bg et un gbDarker qui peut faire des fonds de  cartes
+
+Secondary et un accent
+
+On écrit en textColor partout sauf sur l'accent sur lequel on écrit en bg
+
+En dark :
+Le primary est inchangé mais le PrimaryLighter devient un primaryDarker
+
+Le bg change (il devient l'ancien textColor mais on s'en fout) et le bgDarker est remplacé par un bgLighter
+
+Le textColor change aussi (il devient l'ancien bg mais c'est pareil, on s'en fout)
+
+Secondary et accent changent aussi
+
+La règle est la même, textColor est utilisé partour sauf sur l'accent pour lequel on utilise le bg.
+
+Je propose donc une structure de la sorte :
+
+'lm' : {
+	'primary' : {
+			'normal' : '',
+			'lighter' : '',},
+	'bg' : {
+			'normal' : '',
+			'darker' : '',}
+	'secondary' : '',
+	'textColor' : '',
+	'textOnAccent' : 'lm-bg-normal',
+	},
+'dm' : {
+	'primary' : {
+			'normal' : 'lm-primary-normal',
+			'darker' : '',},
+	'bg' : {
+			'normal' : 'lm-textColor',
+			'lighter' : '',}
+	'secondary' : '',
+	'textColor' : 'lm-bg-normal',
+	'textOnAccent' : 'dm-bg-normal',
+	},
+
+Utilisation de ces couleurs :
+
+bg-normal : pour le fond du site entier
+bg-darker ou bg-lighter : pour le fond d'une carte ou d'un bouton de moindre importance - légère mise en valeur sans doute très peu utilisée
+
+primary-normal : 60% des fonds
+primary-lighter et darker : même chose que pour le bg, peu
+
+secondary : 30% des fonds
+
+accent : 10%  (sur les outlined peut-être ?)

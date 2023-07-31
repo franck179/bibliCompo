@@ -8,6 +8,7 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
+import { useI18n } from "./i18n";
 
 
 export const etabContextId : ContextId<Signal<string>> = createContextId("etabId");
@@ -33,7 +34,7 @@ export default component$(() => {
     useContextProvider(systemThemeContextId, useSignal(""));
 
     console.log("dans root")
-
+    useI18n();
   return (
     <QwikCityProvider>
       <head>

@@ -15,6 +15,10 @@
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
+    "i18n-extract": "node_modules/.bin/localize-extract -s \"dist/build/*.js\" -f json -o src/locale/message.fr.json",
+    "i18n-extract-win":".\\node_modules\\.bin\\localize-extract.bat -s dist\\build\\*.js -f json -o src\\locale\\message.fr.json ",
+  ,
+    "i18n-translate": "node_modules/.bin/localize-translate -s \"*.js\" -t src/locale/message.*.json -o dist/build/{{LOCALE}} -r ./dist/build",
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
@@ -37,5 +41,9 @@
     "undici": "5.22.1",
     "vite": "4.4.0",
     "vite-tsconfig-paths": "4.2.0"
-  }
+  },
+  "dependencies": {
+  "@angular/localize": "^16.1.5",
+  "compression": "^1.7.4"
+}
 }
