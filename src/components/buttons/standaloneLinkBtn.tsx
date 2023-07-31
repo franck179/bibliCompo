@@ -1,4 +1,4 @@
-import {component$, Slot, useSignal} from "@builder.io/qwik";
+import {component$, Slot, useSignal, useTask$} from "@builder.io/qwik";
 import {Link} from "@builder.io/qwik-city";
 
 interface LinkBtnProps {
@@ -19,18 +19,22 @@ export default component$<LinkBtnProps>(
     {
         const color = useSignal("bg-lm-primary-normal dark:bg-dm-primary-normal text-lm-textColor dark:text-dm-textColor")
 
-        switch (props.color) {
-            case "secondary":
-                color.value = "bg-lm-secondary dark:bg-dm-secondary text-lm-textColor dark:text-dm-textColor";
-                break;
-            case "accent":
-                color.value = "bg-lm-accent dark:bg-dm-accent text-lm-textOnAccent dark:text-dm-textOnAccent";
-                break;
-            case "primary":
-            default:
-                color.value = "bg-lm-primary-normal dark:bg-dm-primary-normal text-lm-textColor dark:text-dm-textColor";
-                break;
-        }
+        useTask$(async () => {
+            switch (props.color) {
+                case "secondary":
+                    color.value = "bg-lm-secondary dark:bg-dm-secondary text-lm-textColor dark:text-dm-textColor";
+                    break;
+                case "accent":
+                    color.value = "bg-lm-accent dark:bg-dm-accent text-lm-textOnAccent dark:text-dm-textOnAccent";
+                    break;
+                case "primary":
+                default:
+                    color.value = "bg-lm-primary-normal dark:bg-dm-primary-normal text-lm-textColor dark:text-dm-textColor";
+                    break;
+            }
+        });
+
+
 
         const classe = "flex justify-center items-center " +
             " text-center rounded-2xl shadow-lg dark:z-10 max-w-4xl max-h-96 p-2 h-full" +
