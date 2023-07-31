@@ -34,11 +34,11 @@ export default component$(() => {
         <div class="flex justify-center">
             <div class="relative inline-block">
                 {/*-- Dropdown toggle button --*/}
-                <button class={`relative z-10 flex items-center p-2 text-sm text-onLBackground bg-transparent
+                <button class={`relative z-10 flex items-center p-2 text-sm text-lm-textColor bg-transparent
                                  border border-transparent rounded-md
                                  focus:border-secondary-400 focus:ring-opacity-40 dark:focus:ring-opacity-40
                                  focus:ring-secondary-200 dark:focus:ring-secondary-300 focus:ring
-                                 dark:text-onPrimary/[87]   focus:outline-none`}
+                                 dark:text-dm-textColor   focus:outline-none`}
                         onfocusout$={() => {
                             delay(250).then(() => show.value = false);
                         }}
@@ -58,9 +58,9 @@ export default component$(() => {
 
                 {/*Dropdown menu*/}
                 {show.value && (
-                <div class="flex flex-col absolute right-0 z-20 w-28 py-2 mt-2 overflow-hidden bg-lbg rounded-md shadow-xl dark:bg-dbg">
+                <div class="flex flex-col absolute right-0 z-20 w-28 py-2 mt-2 overflow-hidden bg-lm-bg-normal rounded-md shadow-xl dark:bg-dm-bg-normal">
                         <span
-                           class={` px-4 py-3 w-fit hover:cursor-pointer text-sm ${(theme.value==='light')?'text-accent-300':'text-onLBackground'} capitalize transition-colors duration-200 transform dark:text-onDBackgroundCasual hover:bg-lbgDarker dark:hover:bg-dbgLighter dark:hover:text-onDBackgroundImportant`}
+                           class={` px-4 py-3 w-fit hover:cursor-pointer text-sm ${(theme.value==='light')?'text-lm-accent':'text-lm-textColor'} capitalize transition-colors duration-200 transform dark:text-onDBackgroundCasual hover:bg-lbgDarker dark:hover:bg-dbgLighter dark:hover:text-onDBackgroundImportant`}
                            onClick$={() => {
                                localStorage.theme = 'light';
                                theme.value = 'light';
@@ -70,7 +70,7 @@ export default component$(() => {
                         </span>
 
                         <span
-                           class={`px-4 py-3 w-fit hover:cursor-pointer text-sm ${(theme.value==='dark')?'text-accent-dark':'text-onLBackground dark:text-onDBackgroundCasual dark:hover:text-onDBackgroundImportant'} capitalize transition-colors duration-200 transform  hover:bg-lbgDarker dark:hover:bg-dbgLighter `}
+                           class={`px-4 py-3 w-fit hover:cursor-pointer text-sm ${(theme.value==='dark')?'text-dm-accent':'text-lm-textColor dark:text-dm-textColor dark:hover:text-onDBackgroundImportant'} capitalize transition-colors duration-200 transform  hover:bg-lm-bg-darker dark:hover:bg-dm-bg-lighter `}
                            onClick$={() => {
                                localStorage.theme = 'dark';
                                   theme.value = 'dark';
@@ -80,7 +80,7 @@ export default component$(() => {
                         </span>
 
                         <span
-                            class={`px-4 py-3 w-fit hover:cursor-pointer text-sm ${(theme.value==='')?'text-accent-dark':'text-onLBackground dark:text-onDBackgroundCasual dark:hover:text-onDBackgroundImportant'} capitalize transition-colors duration-200 transform  hover:bg-lbgDarker dark:hover:bg-dbgLighter `}
+                            class={`px-4 py-3 w-fit hover:cursor-pointer text-sm ${(theme.value==='')?'text-lm-accent dark:text-dm-accent':'text-lm-textColor dark:text-dm-textColor dark:hover:text-onDBackgroundImportant'} capitalize transition-colors duration-200 transform  hover:bg-lm-bg-darker dark:hover:bg-dm-bg-lighter `}
                            onClick$={() => {
                                localStorage.removeItem('theme');
                                   // theme.value = systemTheme.value === 'dark' ? 'darkSys' : 'lightSys';
