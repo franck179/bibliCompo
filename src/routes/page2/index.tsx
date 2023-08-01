@@ -1,5 +1,5 @@
 
-import ImgImageCard from '~/assets/images/image-card-top.jpg?jsx';
+import ImgImageCard from '../../../public/image-card-top.jpg?jsx';
 import {component$, useContext, useTask$} from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import LinkBtn from "~/components/buttons/standaloneLinkBtn";
