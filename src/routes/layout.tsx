@@ -43,6 +43,9 @@ export default component$(() => {
     useTask$(async ({track}) => {
         track(() => etabId.value);
         console.log("In routes layout, etabId.value = ", etabId.value);
+        etabId.value = nomEtab;
+        elvId.value = nomCompletElv;
+        classeId.value = nomClasse;
     });
 
     useVisibleTask$(async ({track}) => {
@@ -67,28 +70,23 @@ export default component$(() => {
     const nomCompletElv = "Jean Dupont";
     const nomClasse = "1ère A";
 
-    etabId.value = nomEtab;
-    elvId.value = nomCompletElv;
-    classeId.value = nomClasse;
+
 
 /* Ici je fais un test avec un header dans une grid d'une colonne dans laquelle la deuxième ligne
 *  est une grille de 2 colonnes
 */
 return (
         <>
-
-                <div class={"grid grid-cols-1"}>
-                    <div class={"flex flex-col sticky top-0 z-50 w-full  max-w-7xl border-2 border-blue-500 self-center justify-self-center mb-8"}>
-                        <ElvEtabHead nomEtab={etabId.value} nomElv={elvId.value} nomClasse={classeId.value} />
-                    </div>
-
-                    <div class={"flex w-full justify-center"}>
-                        <div class={"grid grid-cols-1   md:grid-cols-2 col px-10 border-2 border-amber-500 max-w-7xl self-center w-full py-2 gap-2"}>
-                            <Slot  />
-                        </div>
-                    </div>
-
+            <div class={"grid grid-cols-1"}>
+                <div class={"flex flex-col sticky top-0 z-50 w-full  max-w-7xl border-2 border-blue-500 self-center justify-self-center mb-8"}>
+                    <ElvEtabHead nomEtab={etabId.value} nomElv={elvId.value} nomClasse={classeId.value} />
                 </div>
+                <div class={"flex w-full justify-center"}>
+                    <div class={"grid grid-cols-1   md:grid-cols-2 col px-10 border-2 border-amber-500 max-w-7xl self-center w-full py-2 gap-2"}>
+                        <Slot  />
+                    </div>
+                </div>
+            </div>
         </>
 
     );

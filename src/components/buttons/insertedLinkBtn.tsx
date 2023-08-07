@@ -46,7 +46,6 @@ export default component$<InsertedLinkBtnProps>(
             "flex justify-center items-center bg-transparent rounded-lg hover:font-bold p-2 max-w-lg max-h-lg " + color.value;
         });
 
-        console.log("in insertedLinkBtn - color.value : "+color.value);
         // const classe = "flex justify-center items-center bg-transparent rounded-lg hover:font-bold p-2 max-w-lg max-h-lg " + color.value;
         return (
 

@@ -16,7 +16,7 @@ interface ElvEtabHeadProps {
 return (
 
   <div
-      class="grid h-full sm:text- md:text-md  lg:text-lg xl:text-xl  bg-lm-primary dark:bg-dm-primary-darker  px-3 py-1"
+      class="grid h-full sm:text- md:text-md  lg:text-lg xl:text-xl  bg-lm-primary-normal dark:bg-dm-primary-darker   px-3 py-1"
       style={'grid-template-columns: auto 1fr auto'}>
 
     <div class="flex flex-col w-fit">

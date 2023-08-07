@@ -1,8 +1,10 @@
-import {component$, Slot} from "@builder.io/qwik";
+import type { QRL} from "@builder.io/qwik";
+import {component$, Slot, $} from "@builder.io/qwik";
 import {Link} from "@builder.io/qwik-city";
 
 interface LinkBtnProps {
     href?: string;
+    onClick?: QRL;
 }
 
 /**
@@ -25,7 +27,11 @@ export default component$<LinkBtnProps>(
         " max-w-4xl max-h-96 py-2 h-full"
     return (
 
-            <Link href={props.href} class={classe}>
+            <Link
+                {...props}
+                href={props.href}
+                onClick$={props.onClick}
+                class={classe}>
                 <Slot />
             </Link>
 

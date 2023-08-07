@@ -18,6 +18,7 @@ import CardImage from "~/components/cards/card-image";
 import SpiderResults from "~/components/spiderResults";
 import InsertedLinkBtn from "~/components/buttons/insertedLinkBtn";
 import ThemeSwitcher from "~/components/buttons/themeSwitcher";
+import LoginComponent from "~/components/loginComponent";
 
 
 
@@ -229,6 +230,7 @@ export default component$(() => {
 
                 </div>
             </div>
+            <LoginComponent />
 
         </>
     );
